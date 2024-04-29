@@ -833,6 +833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee1673840e005d41ba50c2dfc102eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tr: {fileID: 0}
+  MoveSpeed: 8
 --- !u!1 &2025606401
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,7 +995,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3330007025356413211}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1953f7eb1eaa8ac4bb4689bcb0171edb, type: 3}
   m_Name: 
