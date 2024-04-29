@@ -5,8 +5,8 @@ using UnityEngine.UIElements;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    //컴포넌트를 캐시 처리할 변수
-    private Transform tr;
+    [SerializeField] // private 속성 유지한 채 인스펙터 뷰 노출 기능
+    private Transform tr; //컴포넌트를 캐시 처리할 변수
     public float MoveSpeed = 10.0f;
 
     private void Start()
@@ -27,6 +27,9 @@ public class PlayerCtrl : MonoBehaviour
         //tr.position += Vector3.forward * 1; // [전진 방향 * 속력]
 
         //tr.Translate(Vector3.forward * 1); // 번역
-        tr.Translate(Vector3.forward * Time.deltaTime *v * MoveSpeed); // v(키보드 입력값: 전진, 후진, 정지
+        //tr.Translate(Vector3.forward * Time.deltaTime *v * MoveSpeed); // v(키보드 입력값: 전진, 후진, 정지
+
+        Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
+        tr.Translate(moveDir *MoveSpeed *Time.deltaTime);
     }
 }
