@@ -14,6 +14,7 @@ public class FollowCam : MonoBehaviour
     public float height = 2.0f; // 높이
 
     public float damping = 10.0f; // 반응속도
+    public float targetOffset = 2.0f;
 
     private void Start()
     {
@@ -24,7 +25,7 @@ public class FollowCam : MonoBehaviour
     {
         Vector3 pos = targetTr.position + (-targetTr.forward * distance) + (Vector3.up * height);
         camTr.position = Vector3.Slerp(camTr.position, pos, Time.deltaTime * damping); // Slerp: 주로 회전 로직에 부드럽게 위치 변경
-        camTr.LookAt(targetTr.position); // 카메라 각도 회전
+        camTr.LookAt(targetTr.position + (targetTr.up * targetOffset)); // 카메라 각도 회전
     }
 
 }
